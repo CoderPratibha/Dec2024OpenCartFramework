@@ -38,7 +38,7 @@ public class AccountsPage {
 	@Step("getting acc page title")
 	public String getAccPageTitle() {
 		String title =eleUtil.waitFotTitleIs(HOME_PAGE_TITLE, DEFAULT_TIMEOUT);
-		System.out.println("login page title : " +title);
+		System.out.println("home page title : " +title);
 		return title;
 	}
 	
@@ -46,7 +46,7 @@ public class AccountsPage {
 	@Step("getting acc page url")
 	public String getAccPageURL() {
 		String url =eleUtil.waitForURLContains(HOME_PAGE_FRACTION_URL, DEFAULT_TIMEOUT);
-		System.out.println("login page title : " +url);
+		System.out.println("home page title : " +url);
 		return url;
 	}
 	

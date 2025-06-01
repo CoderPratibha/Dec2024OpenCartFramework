@@ -63,13 +63,13 @@ public class LoginPageTest extends BaseTest{
 	@Severity(SeverityLevel.BLOCKER)
 	@Owner("Naveen")
 	@Test(priority =Short.MAX_VALUE ,description= "login with valid credentials")
-	public void loginTest() {
+	public void dologinTest() {
 		accPage=loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		Assert.assertEquals(accPage.getAccPageTitle(), HOME_PAGE_TITLE);
 		
 	}
 	
-	@Test(enabled =true , description= "WIP --forgot pwd check")
+	@Test(enabled =false , description= "WIP --forgot pwd check")
 	public void forgotPwd() {
 		System.out.println("forgot pwd");
 	}
