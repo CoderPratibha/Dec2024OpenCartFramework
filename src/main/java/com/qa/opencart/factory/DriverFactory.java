@@ -42,7 +42,7 @@ public class DriverFactory {
 	 * name.
 	 * 
 	 * @param browserName
-	 * @return 
+	 * @return
 	 * @return
 	 */
 	@Step("init  driver with properties :{0}")
@@ -59,25 +59,36 @@ public class DriverFactory {
 
 		switch (browserName.toLowerCase().trim()) {
 		case "chrome":
+
 			if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+				// run on remote/selenium grid server/aws/machine
 				initRemoteDriver("chrome");
 			} else {
+
+				// run it on local
 				tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
 			}
 			break;
 
 		case "edge":
 			if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+				// run on remote/selenium grid server/aws/machine
 				initRemoteDriver("edge");
 			} else {
+				
+				// run it on local
 				tlDriver.set(new EdgeDriver(optionsManager.getEdgeOptions()));
 			}
 			break;
 
 		case "firefox":
 			if (Boolean.parseBoolean(prop.getProperty("remote"))) {
+
+				// run on remote/selenium grid server/aws/machine
 				initRemoteDriver("firefox");
 			} else {
+				
+				// run it on local
 				tlDriver.set(new FirefoxDriver(optionsManager.getFirefoxOptions()));
 			}
 			break;
@@ -95,15 +106,14 @@ public class DriverFactory {
 
 		getDriver().get(prop.getProperty("url"));// login page url
 		getDriver().manage().window().maximize();
-		//driver.manage().window().setSize(new Dimension(1920, 1080));
+		
 
 		getDriver().manage().deleteAllCookies();
 		return getDriver();
 
 	}
-	
-	
-	//run it on remote grid
+
+	// run it on remote grid
 
 	private void initRemoteDriver(String browserName) {
 
@@ -117,7 +127,7 @@ public class DriverFactory {
 				e.printStackTrace();
 			}
 			break;
-			
+
 		case "edge":
 
 			try {
@@ -137,10 +147,10 @@ public class DriverFactory {
 			}
 
 			break;
-					
+
 		default:
 
-			System.out.println("this browser  is not supported in Selenium Grid Server....+  browserName");
+			System.out.println("this browser  is not supported in Selenium Grid Server...." + browserName);
 			throw new BrowserException("===Invalid Browser Name===");
 		}
 	}
