@@ -17,7 +17,7 @@
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 		<aspectj.version>1.9.19</aspectj.version>
-		<selenium.version>4.31.0</selenium.version>
+		<selenium.version>4.20.0</selenium.version>
 	</properties>
 
 
@@ -147,8 +147,8 @@
 					<forkCount>3</forkCount>
 					<reuseForks>true</reuseForks>
 					<suiteXmlFiles>
-						 <!-- <suiteXmlFile>src/test/resources/testrunners/testng_regression.xml</suiteXmlFile>  -->
-						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+						  <suiteXmlFile>src/test/resources/testrunners/testng_regression.xml</suiteXmlFile>  
+						<!--<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
 					</suiteXmlFiles>
 					<argLine>
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
