@@ -45,9 +45,9 @@ public class BaseTest {
 	
 	private static final Logger log= LogManager.getLogger(BaseTest.class);
 	@Description("init the driver and properties")
-	@Parameters({"browser"})
+	@Parameters({"browser", "browserversion","testname"})
 	@BeforeTest
-	public void setup(String browserName) {
+	public void setup(String browserName, String browserVersion, String testname) {
 		
 		df= new DriverFactory();
 		prop= df.initProp();
@@ -55,6 +55,8 @@ public class BaseTest {
 		if(browserName!= null) {
 			
 			prop.setProperty("browser", browserName);
+			prop.setProperty("browserversion", browserVersion);
+			prop.setProperty("testname", testname);
 		}
 		
 		driver =df.initDriver(prop);
